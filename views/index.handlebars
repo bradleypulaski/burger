@@ -1,0 +1,35 @@
+<div id="wrapper">
+    <div id="content">
+        <div id="header-icon">
+            <img src="../assets/images/burger.png" />
+            <h1>Eat-Da-Burger!</h1>
+        </div>
+        <div id="burgers">
+            <div id="non-devoured">
+                {{#each nondevoured}}
+                <div class="non-devoured">
+                    <textarea disabled data-id="{{id}}">
+                        {{id}}. {{burger_name}}
+                    </textarea>
+                    <button data-id="{{id}}" class="devour">Devour it!</button>
+                </div>
+                {{/each}}
+            </div>
+            <div id="devoured">
+                <ul class="devoured">
+                    {{#each devoured}}
+                    <li>{{id}}. {{burger_name}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+            <br style="clear:both"/>
+            <br/><br/><br/>
+            <div id="burger-form-container">
+                <form id="burger-form">
+                    <input type="hidden" name="devoured" value="0" />
+                    <input name="burger_name" id="burger-name-form" />
+                 <input type="submit" value="Submit" />
+                </form>
+            </div>
+        </div>
+    </div>
